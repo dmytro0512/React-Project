@@ -1,0 +1,8 @@
+export enum CharClassIds {
+  CLASS_ALCHEMIST = 1,
+  CLASS_HUNTER = 2,
+  CLASS_JESTER = 3,
+  CLASS_LUMBERJACK = 4,
+  CLASS_PRIEST = 5,
+  CLASS_WARRIOR = 6,
+}

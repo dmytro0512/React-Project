@@ -1,0 +1,41 @@
+.text-primary {
+  color: #4f3d25;
+}
+.text-lg {
+  font-size: 1.25em;
+}
+.text-base {
+  font-size: 1em;
+}
+.text-sm {
+  font-size: 0.75em;
+}
+.font-bold {
+  font-weight: 600;
+}
+.leading-none {
+  line-height: 1;
+}
+.text-shadow-light {
+  text-shadow:
+    -0.1em -0.1em 0 #feefc8,
+    0.1em -0.1em 0 #feefc8,
+    -0.1em 0.1em 0 #feefc8,
+    0.1em 0.1em 0 #feefc8;
+}
+.text-shadow-dark {
+  text-shadow:
+    -0.1em -0.1em 0 black,
+    0.1em -0.1em 0 black,
+    -0.1em 0.1em 0 black,
+    0.1em 0.1em 0 black;
+}
+
+.height-of-parent {
+  height: 0;
+  min-height: 100%;
+}
+.width-of-parent {
+  width: 0;
+  min-width: 100%;
+}

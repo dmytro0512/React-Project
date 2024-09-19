@@ -1,0 +1,345 @@
+.quest-main {
+  width: 100vw;
+  height: 100vh;
+  padding: 14px 20px;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  position: relative;
+}
+
+@media screen and (max-width: 1024px) {
+  .quest-main {
+    padding-top: 80px;
+  }
+}
+
+.snow-effect {
+  z-index: -5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  opacity: 10%;
+}
+
+.snow-effect-2 {
+  z-index: -5;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  opacity: 10%;
+}
+
+.overlay {
+  position: fixed;
+  padding: 14px 20px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.overlay .button-group {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.mini-button {
+  width: 56px;
+  height: 56px;
+  background-image: url(./assets/img/quest/button.png);
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-button {
+  width: 200px;
+  height: 64px;
+  background-image: url(./assets/img/quest/long-button.png);
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  padding: 8px 10px;
+}
+
+.profile-button .avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.profile-button span {
+  font-weight: 900;
+  font-size: 14px;
+  color: #4E3C22;
+  text-shadow: 0px 1px 2px 0px #382913;
+}
+
+.money-button {
+  font-size: 25px;
+  font-weight: 700;
+  color: #4E3C22;
+}
+
+.quest-tab {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quest-tab .tab-items {
+  display: flex;
+}
+
+.tab-items button {
+  padding: 25px 55px;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: Aladin;
+  background-size: cover;
+  color: #FCF1C4;
+  text-shadow:
+  -1.5px -1.5px 0 #624D2E,
+  1.5px -1.5px 0 #624D2E,
+  -1.5px 1.5px 0 #624D2E,
+  1.5px 1.5px 0 #624D2E;
+  text-shadow: 0px 2.09px 0px 0px #624D2E;
+  text-shadow: 0px 3.23px 8.08px 0px #F8F8F8 inset;
+}
+
+button.quest-tab-button {
+  background-image: url(./assets/img/quest/active-tab.png);
+}
+
+button.log-tab-button {
+  background-image: url(./assets/img/quest/normal-tab.png);
+}
+
+.quest-tab .tab-content {
+  width: 100%;
+  flex-grow: 1;
+  padding: 28px 24px;
+  background-image: url(./assets/img/quest/dialog.png);
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.tab-content .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header span {
+  font-weight: 400;
+  font-family: Aladin;
+  color: #FCF1C4;
+  text-shadow: -2px -2px 0 #624D2E,
+  2px -2px 0 #624D2E,
+  -2px 2px 0 #624D2E,
+  2px 2px 0 #624D2E;
+}
+
+.header .header-title {
+  font-size: 48px;
+}
+
+.quest-content {
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 1024px) {
+  .quest-list {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .quest-list .quest-item {
+    min-width: 250px;
+  }
+}
+
+.quest-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.quest-list .quest-item {
+  background-image: url(./assets/img/quest/quest.png);
+  background-size: 100% 100%;
+  min-height: 350px;
+  max-width: 350px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.quest-item .wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.wrapper .name-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name-bar span {
+  font-size: 24px;
+  font-family: Aladin;
+  color: #F8D77E;
+  text-shadow: 2px 0 #B68336, -2px 0 #B68336, 0 2px #B68336, 0 -2px #B68336,
+  1px 1px #B68336, -1px -1px #B68336, 1px -1px #B68336, -1px 1px #B68336;
+}
+
+.name-bar .price {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Aladin;
+  color: #9AB86D;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  text-shadow: 2px 0 #2A3717, -2px 0 #2A3717, 0 2px #2A3717, 0 -2px #2A3717,
+  1px 1px #2A3717, -1px -1px #2A3717, 1px -1px #2A3717, -1px 1px #2A3717;
+}
+
+.name-bar .price img {
+  width: 24px;
+  height: 24px;
+}
+
+.wrapper p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  font-family: Roboto;
+  color: white;
+}
+
+.quest-progress {
+  width: 100%;
+  height: 24px;
+  border: solid 1.4px #9AB86D66;
+  background-color: #2A3717;
+  border-radius: 5.56px;
+  position: relative;
+}
+
+.progress-stick {
+  background-color: #9AB86D;
+  border-radius: 4.17px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.quest-progress .progress-text {
+  color: #9AB86D;
+  font-family: Aladin;
+  text-shadow: 2px 0 #2A3717, -2px 0 #2A3717, 0 2px #2A3717, 0 -2px #2A3717,
+  1px 1px #2A3717, -1px -1px #2A3717, 1px -1px #2A3717, -1px 1px #2A3717;
+}
+
+.quest-blog {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.quest-blog .reward-blog {
+  background-image: url(./assets/img/quest/reward-back.png);
+  background-size: 100% 100%;
+}
+
+.quest-blog .reset-blog {
+  background-image: url(./assets/img/quest/reset-back.png);
+  background-size: 100% 100%;
+}
+
+.quest-blog .blog-item {
+  /* z-index: -5; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 26px;
+}
+
+@media screen and (max-width: 1600px) {
+  .quest-blog {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+  }
+
+  .quest-blog .blog-item {
+    min-width: 800px;
+  }
+}
+
+.blog-item .blog-item-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: rotate(-1.48deg);
+  flex-shrink: 0;
+}
+
+.blog-item-text p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 32px;
+  font-family: Aladin;
+  color: #CC9E5A;
+  text-shadow: 2.4px 0 #82482F, -2.4px 0 #82482F, 0 2.4px #82482F, 0 -2.4px #82482F,
+  1.2px 1.2px #82482F, -1.2px -1.2px #82482F, 1.2px -1.2px #82482F, -1.2px 1.2px #82482F,
+  0px 3.59px #82482F;
+}
+
+.blog-item .reward-text {
+  padding: 23px 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.reward-text .reward-money {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.reward-text .complete-status {
+  color: #CC9E5A;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: Aladin;
+  text-shadow: 2px 0 #82482F, -2px 0 #82482F, 0 2px #82482F, 0 -2px #82482F,
+  1px 1px #82482F, -1px -1px #82482F, 1px -1px #82482F, -1px 1px #82482F;
+}
+
+.reward-money span {
+  font-size: 32px;
+  font-weight: 400;
+  font-family: Aladin;
+  color: #F8D77E;
+  text-shadow: 2px 0 #B68336, -2px 0 #B68336, 0 2px #B68336, 0 -2px #B68336,
+               1px 1px #B68336, -1px -1px #B68336, 1px -1px #B68336, -1px 1px #B68336;
+}

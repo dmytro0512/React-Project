@@ -1,0 +1,226 @@
+.battle-field {
+  position: relative;
+}
+.battle-field > .battle-character {
+  position: absolute;
+  height: 45%;
+}
+
+.battle-field.left-field > .battle-character:nth-child(1) {
+  left: 25%;
+  top: 25%;
+  transform: translate(-50%, -50%);
+}
+.battle-field.left-field > .battle-character:nth-child(2) {
+  left: 75%;
+  top: 25%;
+  transform: translate(-50%, -50%);
+}
+.battle-field.left-field > .battle-character:nth-child(3) {
+  left: 25%;
+  top: 75%;
+  transform: translate(-50%, -50%);
+}
+.battle-field.left-field > .battle-character:nth-child(4) {
+  left: 75%;
+  top: 75%;
+  transform: translate(-50%, -50%);
+}
+
+.battle-field.right-field > .battle-character:nth-child(1) {
+  right: 25%;
+  top: 25%;
+  transform: translate(50%, -50%);
+}
+.battle-field.right-field > .battle-character:nth-child(2) {
+  right: 75%;
+  top: 25%;
+  transform: translate(50%, -50%);
+}
+.battle-field.right-field > .battle-character:nth-child(3) {
+  right: 25%;
+  top: 75%;
+  transform: translate(50%, -50%);
+}
+.battle-field.right-field > .battle-character:nth-child(4) {
+  right: 75%;
+  top: 75%;
+  transform: translate(50%, -50%);
+}
+
+.battle-field > .battle-character:nth-child(1) {
+  translate: 2em;
+}
+.battle-field > .battle-character:nth-child(2) {
+  translate: 2em;
+}
+.battle-field > .battle-character:nth-child(3) {
+  translate: -2em;
+}
+.battle-field > .battle-character:nth-child(4) {
+  translate: -2em;
+}
+
+.battle-character,
+.battle-character * {
+  transition: all 200ms;
+}
+.anim_moveToCenter {
+  z-index: 25;
+  animation-name: moveToCenterTeam1;
+  animation-duration: 0.75s;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in;
+}
+
+.anim_moveToCenterTeam2 {
+  z-index: 25;
+  animation-name: moveToCenterTeam2;
+  animation-duration: 0.75s;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in;
+}
+
+.anim_death {
+  animation-name: removeCharacter;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+}
+
+.character_hiteffect {
+  position: absolute;
+  z-index: 35;
+  width: 40%;
+  height: 40%;
+  top: 50%;
+  left: 30%;
+  opacity: 0;
+  transform: translateY(-50%);
+  animation-duration: 0.15s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 2;
+  animation-name: hitFlash;
+}
+
+.hp_delta {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  top: 0;
+  opacity: 0;
+  text-shadow: 0 0 3px rgb(0, 0, 0);
+  z-index: 1;
+  animation: hpDelta 0.75s ease-out;
+  color: rgb(200, 0, 0);
+}
+/* .hp_container .hp_delta.play_animation {
+  animation: hpDelta 0.75s ease-out;
+}
+.hp_container .hp_delta.damage {
+  color: rgb(200, 0, 0);
+}
+.hp_container .hp_delta.heal {
+  color: rgb(0, 200, 0);
+} */
+
+.battle-character.status-fight {
+  top: 50% !important;
+  transform: translateY(-100% -50%) !important;
+  translate: none !important;
+  z-index: 1;
+}
+.battle-field.left-field > .battle-character.status-fight {
+  left: 100% !important;
+}
+.battle-field.right-field > .battle-character.status-fight {
+  right: 100% !important;
+}
+.battle-character.status-fight > :nth-child(1),
+.battle-character.status-fight > :nth-child(2),
+.battle-character.status-fight > :nth-child(4),
+.battle-character.status-fight > :nth-child(3) > div:last-child {
+  visibility: hidden;
+  opacity: 0;
+}
+.battle-field.left-field
+  > .battle-character.status-fight
+  > :nth-child(3)
+  > div:first-child
+  > img {
+  /* transform: translateX(30%); */
+  scale: 2;
+  filter: drop-shadow(0 0 1em green);
+}
+.battle-field.right-field
+  > .battle-character.status-fight
+  > :nth-child(3)
+  > div:first-child
+  > img {
+  transform: translateX(60%);
+  scale: 2;
+  filter: drop-shadow(0 0 1em red);
+}
+
+@keyframes moveToCenterTeam2 {
+  40% {
+    transform: scale(1.2);
+    left: 22%;
+  }
+  100% {
+    transform: scale(1.2);
+    left: 23%;
+  }
+}
+
+@keyframes moveToCenterTeam1 {
+  40% {
+    transform: scale(1.2);
+    right: 22%;
+  }
+  100% {
+    transform: scale(1.2);
+    right: 23%;
+  }
+}
+
+@keyframes hitFlash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes removeCharacter {
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hpDelta {
+  0% {
+    transform: translateY(0);
+  }
+  75% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-2em);
+  }
+}
